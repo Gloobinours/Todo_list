@@ -12,14 +12,14 @@ var tasks = [
     // }
 ]
 var textInput = document.getElementById("textInput");
-textInput.focus();
+textInput.focus(); // Gets the focus when the page is loaded
 var id = 0;
 
-function addLine() {
+const addLine = () => {
     var text = textInput.value; // gets the value
     textInput.value = '';
-    textInput.focus();
-    if (text != '') {
+    textInput.focus(); // gets the focus when the function addLine is called
+    if (text != '') { // If text is empty, 
         var li = document.createElement('li');
         var button = document.createElement('button');
 
@@ -50,7 +50,7 @@ function addLine() {
     }
 };
 
-// someArray.splice(x, 1);
+// Executes function addLine when key enter is pressed
 document.addEventListener('keydown', (e) => {
     if (e.code === 'Enter') {
         addLine();
