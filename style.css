@@ -31,3 +31,23 @@ li button{
     border-bottom:1px solid black;
     width: 90%;
 }
+
+
+#modal{
+    padding: 5%;
+    position: absolute;
+    display: none;
+
+    justify-content: center;
+    align-items: center;
+
+    width: 60%;
+    height: 90%;
+
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+
+    background-color: red;
+
+}
