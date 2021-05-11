@@ -86,3 +86,7 @@ li button{
     margin: 4px 2px;
     cursor: pointer;
 }
+
+#enterButton:hover{
+    background-color:#a87773;
+}
