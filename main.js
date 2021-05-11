@@ -23,6 +23,7 @@ const addLine = () => { // Adds a line inside the lists
     if (text != '') { // If text is empty, 
         var li = document.createElement('li');
         var button = document.createElement('button');
+        button.setAttribute('id', 'closeButton');
 
         var output = document.createTextNode(text);
         var buttonText = document.createTextNode('x');
@@ -62,11 +63,11 @@ const addList = () => { // Adds a list
         var buttonText = document.createTextNode('x');
 
         a.appendChild(titleText);
-        a.addEventListener('click', e => {
+        a.addEventListener('click', () => {
             document.getElementById('modal').style.display = 'block';
             document.getElementById('cache').style.display = 'block';
         });
-        document.getElementById('cache').addEventListener('click', e => {
+        document.getElementById('cache').addEventListener('click', () => {
             document.getElementById('modal').style.display = 'none';
             document.getElementById('cache').style.display = 'none';
         });
@@ -77,11 +78,18 @@ const addList = () => { // Adds a list
 
         li.setAttribute('key', id);
         lists.push({
-            id,
+            id: id,
             title,
             tasks: []
         });
         id += 1;
+
+        // var modal = document.createElement('div');
+        // modal.classList.add("modal");
+        // var title = document.createElement('h1');
+        // modal.appendChild(title);
+        // var lines = document.createElement('ul');
+        // lines.classList.add('modal-ul');
 
         button.addEventListener('click', e => { // Removes line when cross is clicked
             e.target.parentElement.remove();
