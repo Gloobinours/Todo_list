@@ -10,45 +10,45 @@ var lists = [
     //         }
     //     ]
     // }
-]
+];
 var textInput = document.getElementById("textInput");
+var textInput2 = document.getElementById("textInput2");
 textInput.focus(); // Gets the focus when the page is loaded
 var id = 0;
 
-// const addLine = () => {
-//     var text = textInput.value; // gets the value
-//     textInput.value = '';
-//     textInput.focus(); // gets the focus when the function addLine is called
-//     if (text != '') { // If text is empty, 
-//         var li = document.createElement('li');
-//         var button = document.createElement('button');
+const addLine = () => {
+    var text = textInput2.value; // gets the value
+    textInput2.value = '';
+    // textInput2.focus(); // gets the focus when the function addLine is called
+    if (text != '') { // If text is empty, 
+        var li = document.createElement('li');
+        var button = document.createElement('button');
 
-//         var output = document.createTextNode(text);
-//         var buttonText = document.createTextNode('x');
+        var output = document.createTextNode(text);
+        var buttonText = document.createTextNode('x');
 
-//         li.appendChild(output);
-//         button.appendChild(buttonText);
-//         li.appendChild(button);
-//         document.getElementById('table').appendChild(li);
+        li.appendChild(output);
+        button.appendChild(buttonText);
+        li.appendChild(button);
+        document.getElementById('modal-ul').appendChild(li);
 
-//         li.setAttribute('key', id);
-//         tasks.push({
-//             text: text,
-//             id: id,
-//             subTasks: []
-//         });
-//         id += 1;
+        // li.setAttribute('key', id);
+        lists[id-1].tasks.push({
+            text: text,
+            id: id,
+        });
+        id += 1;
 
-//         button.addEventListener('click', e => { // Removes line when cross is clicked
-//             e.target.parentElement.remove();
-//             var targetId = e.target.parentElement.getAttribute('key');
-//             var targetIndex = tasks.findIndex(task => task.id == targetId);
-//             tasks.splice(targetIndex, 1);
-//             textInput.focus();
-//         });
+        button.addEventListener('click', e => { // Removes line when cross is clicked
+            e.target.parentElement.remove();
+            var targetId = e.target.parentElement.getAttribute('key');
+            // var targetIndex = tasks.findIndex(task => task.id == targetId);
+            // tasks.splice(targetIndex, 1);
+            textInput2.focus();
+        });
 
-//     }
-// };
+    };
+};
 
 const addList = () => {
     
@@ -61,9 +61,14 @@ const addList = () => {
         var titleText = document.createTextNode(title);
         var buttonText = document.createTextNode('x');
 
-        a.appendChild(titleText)
-        li.addEventListener('click', e => {
+        a.appendChild(titleText);
+        a.addEventListener('click', e => {
             document.getElementById('modal').style.display = 'block';
+            document.getElementById('cache').style.display = 'block';
+        });
+        document.getElementById('cache').addEventListener('click', e => {
+            document.getElementById('modal').style.display = 'none';
+            document.getElementById('cache').style.display = 'none';
         });
         li.appendChild(a);
         button.appendChild(buttonText);
@@ -86,12 +91,19 @@ const addList = () => {
             textInput.focus();
         });
 
-    }
+    };
 };
 
-// Executes function addLine when key enter is pressed
+// Executes function addList when key enter is pressed
 textInput.addEventListener('keydown', (e) => {
     if (e.code === 'Enter') {
         addList();
-    }
+    };
+});
+
+// Executes function addLine when key enter is pressed
+textInput2.addEventListener('keydown', (e) => {
+    if (e.code === 'Enter') {
+        addLine();
+    };
 });

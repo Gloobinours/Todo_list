@@ -17,6 +17,9 @@ li {
 li:nth-child(odd){
     background-color: #eee;
 }
+li:nth-child(even){
+    background-color: #fff;
+}
 
 li button{
     float: right;
@@ -32,8 +35,8 @@ li button{
     width: 90%;
 }
 
-
 #modal{
+    z-index: 11;
     padding: 5%;
     position: absolute;
     display: none;
@@ -48,6 +51,25 @@ li button{
     top: 50%;
     transform: translate(-50%, -50%);
 
-    background-color: red;
+    background-color: #fff;
+}
+#cache{
+    z-index: 10;
+    display: none;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.5);
 
+    top: 0; 
+    width: 100%;
+    height: 100%;
+}
+
+#input2{
+    border-bottom: 1px solid #eee;
+    padding: 30px;
+}
+#input2 input{
+    border:none;
+    border-bottom:1px solid black;
+    width: 90%;
 }
