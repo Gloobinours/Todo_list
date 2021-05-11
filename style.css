@@ -78,7 +78,7 @@ li button{
     background-color: #af534c;
     border: none;
     color: white;
-    padding: 10px 40px;
+    padding: 10px 20px;
     text-align: center;
     text-decoration: none;   
     display: inline-block;
@@ -89,4 +89,21 @@ li button{
 
 #enterButton:hover{
     background-color:#a87773;
+}
+
+.closeButton{
+    background-color: #af534c;
+    border: none;
+    color: white;
+    padding: 5px 5px;
+    text-align: center;
+    text-decoration: none;   
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 4px;
+    cursor: pointer;
+}
+
+.closeButton:hover{
+    background-color: #a87773;
 }
