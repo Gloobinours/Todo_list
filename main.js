@@ -14,9 +14,9 @@ var lists = [
 var textInput = document.getElementById("textInput");
 var textInput2 = document.getElementById("textInput2");
 textInput.focus(); // Gets the focus when the page is loaded
-var id = 0;
+var id = 0; // Icrements by 1 each time the function addLine is called
 
-const addLine = () => {
+const addLine = () => { // Adds a line inside the lists
     var text = textInput2.value; // gets the value
     textInput2.value = '';
     // textInput2.focus(); // gets the focus when the function addLine is called
@@ -50,7 +50,7 @@ const addLine = () => {
     };
 };
 
-const addList = () => {
+const addList = () => { // Adds a list 
     
     var title = textInput.value; // gets the value
     textInput.value = ''; // Resets the input
