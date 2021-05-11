@@ -23,7 +23,7 @@ const addLine = () => { // Adds a line inside the lists
     if (text != '') { // If text is empty, 
         var li = document.createElement('li');
         var button = document.createElement('button');
-        button.setAttribute('id', 'closeButton');
+        button.setAttribute('class', 'closeButton');
 
         var output = document.createTextNode(text);
         var buttonText = document.createTextNode('x');
@@ -58,6 +58,8 @@ const addList = () => { // Adds a list
     if (title != '') { // If title is not empty, 
         var li = document.createElement('li');
         var button = document.createElement('button');
+        button.setAttribute('class', 'closeButton');
+
         var a = document.createElement('a');
         var titleText = document.createTextNode(title);
         var buttonText = document.createTextNode('x');
