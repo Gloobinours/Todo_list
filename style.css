@@ -73,3 +73,16 @@ li button{
     border-bottom:1px solid black;
     width: 90%;
 }
+
+#enterButton{
+    background-color: #af534c;
+    border: none;
+    color: white;
+    padding: 10px 40px;
+    text-align: center;
+    text-decoration: none;   
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
